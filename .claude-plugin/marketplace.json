@@ -1,23 +1,23 @@
 {
   "name": "agent-governance-toolkit",
   "owner": {
-    "name": "Microsoft Corporation",
-    "email": "agentgovtoolkit@microsoft.com"
+    "name": "The Carter Center",
+    "email": "joshua.hester@cartercenter.org"
   },
   "description": "Agent Governance Toolkit plugins for Claude Code",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "plugins": [
     {
       "name": "agt-governance",
       "source": "./agent-governance-claude-code",
       "description": "AGT governance hooks and MCP tools for Claude Code sessions",
-      "version": "5.0.0",
+      "version": "5.0.1",
       "author": {
         "name": "Microsoft Corporation",
         "email": "agentgovtoolkit@microsoft.com"
       },
       "homepage": "https://github.com/microsoft/agent-governance-toolkit/tree/main/agent-governance-claude-code",
-      "repository": "https://github.com/microsoft/agent-governance-toolkit",
+      "repository": "https://github.com/thecartercenter/agent-governance-toolkit",
       "license": "MIT",
       "category": "security",
       "tags": [
