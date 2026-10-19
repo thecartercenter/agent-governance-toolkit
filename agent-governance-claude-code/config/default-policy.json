@@ -45,11 +45,11 @@
       "effect": "deny",
       "commandPatterns": [
         {
-          "source": "\\bcurl\\b[^\\n\\r|>]*\\|[^\\n\\r]*(sh|bash)",
+          "source": "\\bcurl\\b[^\\n\\r|>]*\\|[^\\n\\r]*(sh|bash)\\b",
           "flags": "i"
         },
         {
-          "source": "\\bwget\\b[^\\n\\r|>]*\\|[^\\n\\r]*(sh|bash)",
+          "source": "\\bwget\\b[^\\n\\r|>]*\\|[^\\n\\r]*(sh|bash)\\b",
           "flags": "i"
         },
         {
@@ -83,7 +83,33 @@
         {
           "source": "\\b(Get-ChildItem|gci|dir|ls)\\b\\s+Env:|\\bset\\b\\s*(?:$|\\|)",
           "flags": "i"
+        },
+        { 
+          "source": "\\brm\\s+(?:-[\\w-]+\\s+)*(?:-[a-zA-Z]*[rR][a-zA-Z]*|--recursive)\\b",
+          "flags": ""
+        },
+        { 
+          "source": "\\bRemove-Item\\b[^\\n\\r]*-Recurse",
+          "flags": "i" 
+        },
+        {
+          "source": "\\b(?:rd|rmdir)\\b[^\\n\\r]*\\s/s\\b",
+          "flags": "i" 
+        },
+        { 
+          "source": "\\bfind\\b[^\\n\\r]*\\s-delete\\b",
+          "flags": "" 
         }
+      ]
+    },
+    {
+      "id": "destructive-ops",
+      "tool": "Bash",
+      "effect": "deny",
+      "reason": "Force-push, hard reset, and sudo are blocked by policy. Ask a developer.",
+      "commandPatterns": [
+        { "source": "\\bgit\\s+(?:push\\b[^\\n\\r]*(?:--force\\b|\\s-f\\b)|reset\\s+--hard\\b|clean\\s+-[a-zA-Z]*f)", "flags": "i" },
+        { "source": "\\bsudo\\b", "flags": "" }
       ]
     }
   ],
@@ -133,6 +159,15 @@
             "source": "(^|/)\\.git/hooks(?:/|$)",
             "flags": "i"
           }
+        ]
+      },
+      {
+        "id": "governance-self-protection",
+        "operation": "write",
+        "effect": "deny",
+        "reason": "Claude Code and AGT configuration can't be modified by the agent.",
+        "pathPatterns": [
+          { "source": "(^|/)\\.claude/(?:settings(?:\\.local)?\\.json$|hooks(?:/|$)|agt(?:/|$))", "flags": "i" }
         ]
       }
     ],
