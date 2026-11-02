@@ -1,6 +1,6 @@
 {
   "companyAnnouncements": [
-    "Claude Code now has safety guardrails. Some risky actions are blocked or need your approval."
+    "Claude Code now has safety guardrails. Some risky actions are blocked or need your approval. Questions: <shared IT mailbox>."
   ],
   "allowManagedPermissionRulesOnly": true,
   "allowManagedMcpServersOnly": true,
@@ -93,7 +93,42 @@
       "Edit(~/.claude/agents/**)",
       "Edit(~/.claude/skills/**)",
       "Edit(~/.claude/commands/**)",
-      "Edit(~/.claude.json)"
+      "Edit(~/.claude.json)",
+      "Bash(security find-generic-password*)",
+      "Bash(security find-internet-password*)",
+      "Bash(security dump-keychain*)",
+      "Bash(security export*)",
+      "Read(~/Library/Keychains/**)",
+      "Read(~/Library/Application Support/Google/Chrome/**)",
+      "Read(~/Library/Application Support/Microsoft Edge/**)",
+      "Read(~/Library/Application Support/Firefox/Profiles/**)",
+      "Read(~/Library/Cookies/**)",
+      "Read(~/Library/Safari/**)",
+      "Read(~/Library/Application Support/pip/**)",
+      "Edit(~/Library/LaunchAgents/**)",
+      "Edit(//Library/LaunchAgents/**)",
+      "Edit(//Library/LaunchDaemons/**)",
+      "Bash(launchctl load*)",
+      "Bash(launchctl bootstrap*)",
+      "Bash(launchctl submit*)",
+      "Bash(crontab*)",
+      "Edit(~/.zshrc)",
+      "Edit(~/.zprofile)",
+      "Edit(~/.zshenv)",
+      "Edit(~/.bash_profile)",
+      "Edit(~/.bashrc)",
+      "Edit(~/.profile)",
+      "Bash(xattr -d*)",
+      "Bash(xattr -c*)",
+      "Bash(xattr * com.apple.quarantine*)",
+      "Bash(spctl --master-disable*)",
+      "Bash(spctl --global-disable*)",
+      "Bash(csrutil*)",
+      "Bash(tccutil reset*)",
+      "Bash(diskutil erase*)",
+      "Bash(osascript * administrator privileges*)",
+      "Bash(set)",
+      "Bash(export -p*)"
     ],
     "ask": [
       "Bash(npm install:*)",
@@ -165,7 +200,11 @@
       "PowerShell(dotnet add package:*)",
       "PowerShell(choco install:*)",
       "PowerShell(scoop install:*)",
-      "Edit(**/.mcp.json)"
+      "Edit(**/.mcp.json)",
+      "Bash(brew install*)",
+      "Bash(brew reinstall*)",
+      "Bash(brew tap*)",
+      "Bash(osascript*)"
     ],
     "disableBypassPermissionsMode": "disable"
   }
