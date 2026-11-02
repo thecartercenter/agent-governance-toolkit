@@ -1,7 +1,13 @@
 {
   "companyAnnouncements": [
-    "Claude Code now has safety guardrails. Some risky actions are blocked or need your approval. Questions: <shared IT mailbox>."
+    "Claude Code now has safety guardrails. Some risky actions are blocked or need your approval."
   ],
+  "allowManagedPermissionRulesOnly": true,
+  "allowManagedMcpServersOnly": true,
+  "allowedMcpServers": [],
+  "env": {
+    "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB": "1"
+  },
   "permissions": {
     "deny": [
       "Bash(sudo:*)",
@@ -42,10 +48,14 @@
       "Edit(**/.claude/settings.local.json)",
       "Bash(printenv:*)",
       "Bash(env)",
-      "PowerShell(Get-ChildItem env:*)",
-      "PowerShell(gci env:*)",
-      "PowerShell(dir env:*)",
-      "PowerShell(ls env:*)",
+      "PowerShell(Get-ChildItem env:)",
+      "PowerShell(Get-ChildItem env::*)",
+      "PowerShell(gci env:)",
+      "PowerShell(gci env::*)",
+      "PowerShell(dir env:)",
+      "PowerShell(dir env::*)",
+      "PowerShell(ls env:)",
+      "PowerShell(ls env::*)",
       "PowerShell(schtasks:*)",
       "PowerShell(Register-ScheduledTask:*)",
       "PowerShell(New-Service:*)",
@@ -53,7 +63,22 @@
       "PowerShell(Set-ExecutionPolicy:*)",
       "Edit(~/Documents/PowerShell/**)",
       "Edit(~/Documents/WindowsPowerShell/**)",
-      "Edit(~/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/**)"
+      "Edit(~/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/**)",
+      "Read(~/.netrc)",
+      "Read(~/_netrc)",
+      "Read(~/.pypirc)",
+      "Read(~/.vault-token)",
+      "Read(~/.claude/.credentials.json)",
+      "Read(~/.config/gh/**)",
+      "Read(~/AppData/Roaming/GitHub CLI/**)",
+      "Read(~/AppData/Roaming/gcloud/**)",
+      "Read(~/AppData/Roaming/pip/**)",
+      "Read(~/AppData/Local/Google/Chrome/User Data/**)",
+      "Read(~/AppData/Local/Microsoft/Edge/User Data/**)",
+      "Read(~/AppData/Roaming/Mozilla/Firefox/Profiles/**)",
+      "Read(**/*.p12)",
+      "Read(**/*.tfstate)",
+      "Edit(**/.git/hooks/**)"
     ],
     "ask": [
       "Bash(npm install:*)",
