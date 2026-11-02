@@ -1,6 +1,6 @@
 {
   "companyAnnouncements": [
-    "Claude Code now has safety guardrails. Some risky actions are blocked or need your approval. Questions: <shared IT mailbox>."
+    "Claude Code now has safety guardrails. Some risky actions are blocked or need your approval."
   ],
   "allowManagedPermissionRulesOnly": true,
   "allowManagedMcpServersOnly": true,
