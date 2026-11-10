@@ -207,5 +207,27 @@
       "Bash(osascript*)"
     ],
     "disableBypassPermissionsMode": "disable"
+  },
+  "sandbox": {
+    "allowUnsandboxedCommands": false,
+    "enabled": true,
+    "failIfUnavailable": true,
+     "filesystem": {
+    "allowRead": [
+      "/private/etc/ssl/cert.pem",
+      "/etc/ssl/cert.pem",
+      "/opt/homebrew/etc/ca-certificates/cert.pem"
+      ]
+    },
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "*.githubusercontent.com",
+        "registry.npmjs.org",
+        "pypi.org",
+        "files.pythonhosted.org"
+      ]
+    }
   }
 }
