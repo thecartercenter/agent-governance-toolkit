@@ -5,6 +5,8 @@
   "allowManagedPermissionRulesOnly": true,
   "allowManagedMcpServersOnly": true,
   "allowedMcpServers": [],
+  "sshHostAllowlist": [],
+  "disableBrowserExternalNavigation": true,
   "env": {
     "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB": "1"
   },
