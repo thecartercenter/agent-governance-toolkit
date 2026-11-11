@@ -215,7 +215,6 @@
   "sandbox": {
     "allowUnsandboxedCommands": false,
     "enabled": true,
-    "failIfUnavailable": true,
      "filesystem": {
     "allowRead": [
       "/private/etc/ssl/cert.pem",
