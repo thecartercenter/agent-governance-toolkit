@@ -5,6 +5,7 @@
   "allowManagedPermissionRulesOnly": true,
   "allowManagedMcpServersOnly": true,
   "allowedMcpServers": [],
+  "managedSourcesBehavior": "merge",
   "sshHostAllowlist": [],
   "disableBrowserExternalNavigation": true,
   "disableRemoteControl": true,
